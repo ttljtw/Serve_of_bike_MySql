@@ -1,0 +1,60 @@
+退出登录：{"mode":0, "email":"账户Email"}
+
+
+登录：{"mode":1, "email":"email", "pas":"password"}
+登录返回：{"mode":1, "loginResult":"0|1"}(0为登录失败， 1为登录成功)
+
+
+注册：{"mode":2, "email":"email", "pas":"password"}
+注册返回：{"mode":2, "registerResult":"0|1|2"}(0为注册失败-用户名已存在， 1为注册成功， 2为注册失败-其他原因)
+
+
+请求好友列表：{"mode":3, "email":"账户Email"}
+好友列表返回： {"mode": 3, "requestResult": 0|1, "friendList":[{"friendUserId": "好友ID", "friendEmail": "好友的email"}]}（0为请求失败， 1为请求成功）
+
+
+好友增加请求：{"mode":4, "email":"账户Email","friendEmail":"账户Email"}
+添加好友返回： {"mode": 4, "requestResult": 0|1, "failReason":"失败原因"}(0为添加失败，1为添加成功)
+好友请求推送内容：{"mode":4, "email":"账户email", "friendEmail":"账户email"} （email为请求人email， friendEmail为被请求人（通知接收者）email）
+
+
+车锁列表请求：{"mode":5, "email":"账户Email"}
+车锁列表返回: {"mode": 5, "requestResult": 0|1, "lockList":[{"lockId": "车锁Id", "lockShareState": "yes"|"no", "owner":"email"}]}(0为请求失败， 1为请求成功, "yes"为车锁已分享， "no"为车锁未分享)
+
+
+车锁绑定请求：{"mode":6, "email":"账户Email","lockId":"车锁ID"}
+车锁绑定返回： {"mode": 6, "requestResult": 0|1, "failReason":"失败原因"}(0为绑定失败， 1为绑定成功)
+
+
+车锁分享请求：{"mode":7, "email":"账户Email","friendEmail":"账户Email","lockId":"车锁ID"}
+车锁分享返回：{"mode": 7, "requestResult": 0|1, "failReason":"失败原因"}(0为绑定失败， 1为绑定成功)
+车锁分享推送内容：{"mode":7, "email":"账户email", "friendEmail":"账户email"}  (向被分享到的人推送，email为分享者的email， friendEmail为分享接受者的email)
+
+车锁取消分享：{"mode":8,"email":"账户Email","lockId":"车锁ID"}
+车锁取消分享返回：{"mode": 8, "requestResult": 0|1, "failReason":"失败原因"}(0为取消分享失败， 1为取消分享成功)
+车锁取消分享推送内容：{"mode":8, "email":"账户email", "friendEmail":"账户email"}  (向被分享到的人推送，email为取消分享者的email， friendEmail为取消分享者的email)
+
+
+发送channelID：{"mode": 10, "email":"账户Email", "channelId": "channelId"}
+
+
+开锁：{"mode":11, "email":"账户email", "lockId":"车锁Id"}
+开锁返回：{"mode":11, "email":"账户email", "lockId":"车锁Id", "requestResult": 0|1, "failReason":"失败原因"}
+
+
+关锁：{"mode":12, "email":"账户email", "lockId":"车锁Id"}
+关锁返回：{"mode":12, "email":"账户email", "lockId":"车锁Id", "requestResult": 0|1, "failReason":"失败原因"}
+
+
+删除好友：{"mode":13, "email":"账户Email","friendEmail":"账户Email"}
+删除好友返回： {"mode": 13, "requestResult": 0|1, "failReason":"失败原因"}(0为删除失败，1为删除成功)
+
+
+删除车锁：{"mode":14, "email":"账户Email","lockId":"车锁Id"}
+删除车锁返回： {"mode":14, "requestResult":0|1, "failReason":"失败原因"}
+
+
+车锁状态请求：{"mode":15, "email":"email", "lockId":"lockId"}
+车锁状态返回：{"mode":15, "requestResult": 0|1, "failReason":"失败原因","lockState":"on|off", "owner":"所有者的email", "gps":"gps数据"}
+
+
